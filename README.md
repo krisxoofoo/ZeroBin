@@ -9,6 +9,9 @@ browser using 256 bits AES.
 More information on the project page:
 http://sebsauvage.net/wiki/doku.php?id=php:zerobin
 
+Demo version of this redesigned by XooFoo.org visible on this page:
+http://paste.xoofoo.org
+
 ------------------------------------------------------------------------------
 
 Copyright (c) 2012 Sébastien SAUVAGE (sebsauvage.net)
