@@ -112,7 +112,10 @@ function decompress(data) {
  * @return encrypted string data
  */
 function zeroCipher(key, message) {
-    return sjcl.encrypt(key,compress(message));
+    if ($('input#password').val().length==0) {
+	return sjcl.encrypt(key,compress(message));
+    }
+    return sjcl.encrypt(key+sjcl.codec.hex.fromBits(sjcl.hash.sha256.hash($("input#password").val())),compress(message));
 }
 /**
  *  Decrypt message with key, then decompress.
@@ -122,7 +125,13 @@ function zeroCipher(key, message) {
  *  @return string readable message
  */
 function zeroDecipher(key, data) {
-    return decompress(sjcl.decrypt(key,data));
+//    return decompress(sjcl.decrypt(key,data));
+    try {
+	return decompress(sjcl.decrypt(key,data));
+    } catch(err){
+	var password = prompt("Please enter the password for this paste.","");
+	return decompress(sjcl.decrypt(key+sjcl.codec.hex.fromBits(sjcl.hash.sha256.hash(password)),data));
+    }
 }
 
 /**
@@ -232,7 +241,7 @@ function displayMessages(key, comments) {
             }
             var divComment = $('<div class="comment" id="comment_' + comment.meta.commentid+'">'
                                + '<div class="commentmeta"><span class="nickname"></span><span class="commentdate"></span></div><div class="commentdata"></div>'
-                               + '<button onclick="open_reply($(this),\'' + comment.meta.commentid + '\');return false;">Reply</button>'
+                               + '<button class="reply" onclick="open_reply($(this),\'' + comment.meta.commentid + '\');return false;">Reply</button>'
                                + '</div>');
             setElementText(divComment.find('div.commentdata'), cleartext);
             // Convert URLs to clickable links in comment.
@@ -415,6 +424,8 @@ function stateNewPaste() {
     $('div#burnafterreadingoption').show();
     $('div#opendisc').show();
     $('div#syntaxcoloringoption').show();
+	$('div#addpassword').show();
+	$('input#password').show();
     $('button#newbutton').show();
     $('div#pasteresult').hide();
     $('textarea#message').text('');
@@ -442,7 +453,8 @@ function stateExistingPaste() {
     $('div#expiration').hide();
     $('div#burnafterreadingoption').hide();
     $('div#opendisc').hide();
-    $('div#syntaxcoloringoption').hide();    
+    $('div#syntaxcoloringoption').hide();
+	$('div#addpassword').hide();    
     $('button#newbutton').show();
     $('div#pasteresult').hide();
     $('textarea#message').hide();
