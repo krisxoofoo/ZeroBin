@@ -3,6 +3,7 @@
 	<title>ZeroBin</title>
 	<meta name="robots" content="noindex" />
 	<link type="text/css" rel="stylesheet" href="css/zerobin.css?{$VERSION|rawurlencode}#">
+	<link type="text/css" rel="stylesheet" href="css/keyboard.css?{$VERSION|rawurlencode}#">
 </head>
 <body id="pagewrap">
 	<header>
@@ -30,7 +31,7 @@
 			</div>
 			
 			<div id="remainingtime" style="display:none;"></div>
-			<textarea id="message" name="message" cols="80" rows="25" style="display:none;"></textarea>
+			<textarea id="message" class="keyboardInput" name="message" cols="80" rows="25" style="display:none;"></textarea>
 			<div id="discussion" style="display:none;">
 				<h4>Discussion</h4>
 				<div id="comments"></div>
@@ -82,5 +83,6 @@
 	<script src="js/zerobin.js?{$VERSION|rawurlencode}#"></script>
 	<link type="text/css" rel="stylesheet" href="js/highlight.styles/monokai.css?{$VERSION|rawurlencode}#">
 	<script src="js/highlight.pack.js?{$VERSION|rawurlencode}#"></script>
+	<script src="js/keyboard.js?{$VERSION|rawurlencode}#"></script>
 </body>
 </html>
