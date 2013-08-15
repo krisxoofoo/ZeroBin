@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
 	<title>ZeroBin</title>
@@ -7,7 +8,6 @@
 </head>
 <body id="pagewrap">
 	<header>
-		<hgroup>
 			<h1 id="site-logo" title="ZeroBin" onclick="window.location.href=scriptLocation();return false;">ZeroBin <span style="font-size: .3em; font-style:italic; font-weight: normal;">{$VERSION}</span></h1>
 			<h2 id="site-description">Because ignorance is bliss</h2>
 			<noscript><div class="nonworking">Javascript is required for ZeroBin to work.<br>Sorry for the inconvenience.</div></noscript>
@@ -15,7 +15,6 @@
 				<div id="oldienotice" class="nonworking">ZeroBin requires a modern browser to work.</div>
 				<div id="ienotice"><p>Still using Internet Explorer ? &nbsp;Do yourself a favor, switch to a modern browser: <a href="http://www.mozilla.org/firefox/">Firefox</a>, <a href="http://www.opera.com/">Opera</a>, <a href="http://www.google.com/chrome">Chrome</a>, <a href="http://www.apple.com/safari">Safari</a>...</p></div>
 			<![endif]-->
-		</hgroup>
 	</header>
 	
 	<section id="error">
@@ -41,9 +40,9 @@
 	</section>
 	<aside id="sidebar">
 		<div id="toolbar">
-			<button id="newbutton" onclick="window.location.href=scriptLocation();return false;" style="display:none;"><img src="img/icon_new.png#" width="11" height="15" />New</button>
-			<button id="clonebutton" onclick="clonePaste();return false;" style="display:none;"><img src="img/icon_clone.png#" width="15" height="17" />Clone</button>
-			<button id="rawtextbutton" onclick="rawText();return false;" style="display:none; "><img src="img/icon_raw.png#" width="15" height="15" style="padding:1px 0 1px 0;"/>Raw text</button>
+			<button id="newbutton" onclick="window.location.href=scriptLocation();return false;" style="display:none;"><img src="img/icon_new.png#" style="width:11px; height:15px;" alt=""/>New</button>
+			<button id="clonebutton" onclick="clonePaste();return false;" style="display:none;"><img src="img/icon_clone.png#" style="width:15px; height:17px;" alt=""/>Clone</button>
+			<button id="rawtextbutton" onclick="rawText();return false;" style="display:none; "><img src="img/icon_raw.png#" style="padding:1px 0 1px 0; width:15px; height:15px;" alt=""/>Raw text</button>
 			<div id="expiration" style="display:none;">Expires: 
 				<select id="pasteExpiration" name="pasteExpiration">
 					<option value="5min">5 minutes</option>
@@ -71,7 +70,7 @@
 			<div id="addpassword" style="display:none;">
 				<input id="password" class="keyboardInput" type="password" placeholder="Optional password..." />
 			</div>
-			<button id="sendbutton" onclick="send_data();return false;" style="display:none;"><img src="img/icon_send.png#" width="18" height="15" />Send</button>
+			<button id="sendbutton" onclick="send_data();return false;" style="display:none;"><img src="img/icon_send.png#" style="width:18px; height:15px;" alt=""/>Send</button>
 		</div>
 	</aside>
 	<footer class="footer">

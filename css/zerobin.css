@@ -10,8 +10,8 @@ body:before,body:after {content: "";display: table;}
 body:after {clear: both;}
 a  { color:#62C42E;text-decoration: none; }
 a:hover {color: #000;}
-h1 {font-size:3.5em;font-weight:700;color:#000;cursor:pointer;}
-h2 { color:#000; font-size:1em; font-style:italic; font-weight:bold;}
+h1 {font-size:3.5em;font-weight:700;color:#000;cursor:pointer; text-shadow: 0 0 1px #aaa;}
+h2 { color:#000; font-size:1em; font-style:italic; font-weight:bold; text-shadow: 0 0 1px #ccc;}
 h3 { color:#94a3b4; font-size:0.7em; }  
 h4 {font-size:1.2em;font-style:italic;font-weight:bold;margin-left:30px;}
 pre a {color:#58A5B4;}
