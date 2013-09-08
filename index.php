@@ -338,7 +338,11 @@ function processPasteFetch($pasteid)
         {
             return array('','Paste does not exist, has expired or has been deleted.','');
         }
-    }    
+    }
+    else
+    {
+        return array('','Invalid data','');
+    }
 
     // Get the paste itself.
     $paste=json_decode(file_get_contents($filename));
