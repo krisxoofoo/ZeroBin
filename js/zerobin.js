@@ -126,12 +126,16 @@ function zeroCipher(key, message) {
  */
 function zeroDecipher(key, data) {
 //    return decompress(sjcl.decrypt(key,data));
+    if (data != undefined)
+    {
     try {
 	return decompress(sjcl.decrypt(key,data));
     } catch(err){
 	var password = prompt("Please enter the password for this paste.","");
 	return decompress(sjcl.decrypt(key+sjcl.codec.hex.fromBits(sjcl.hash.sha256.hash(password)),data));
     }
+    }
+    return undefined;
 }
 
 /**
