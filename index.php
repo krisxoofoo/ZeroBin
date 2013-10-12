@@ -406,7 +406,6 @@ if (!empty($_GET['deletetoken']) && !empty($_GET['pasteid'])) // Delete an exist
 else if (!empty($_SERVER['QUERY_STRING']))  // Return an existing paste.
 {
     list ($CIPHERDATA, $ERRORMESSAGE, $STATUS) = processPasteFetch($_SERVER['QUERY_STRING']);    
-
 }
 
 require_once "lib/rain.tpl.class.php";
